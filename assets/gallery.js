@@ -1,4 +1,5 @@
 const reelProjects = [
+  ['m8CQNYvjB_Q', 'https://youtu.be/m8CQNYvjB_Q?si=EiAkE1hTnUvBaSs6', 'Electricity Documentary'],
   ['PG8WKKEPhNQ', 'https://youtube.com/shorts/PG8WKKEPhNQ?si=cBC2GqAzMcBsSo6I'],
   ['VMLtavG5mXU', 'https://youtube.com/shorts/VMLtavG5mXU?si=gBkZ33CQZXMVcfrD'],
   ['Mc6FhAX66EQ', 'https://youtube.com/shorts/Mc6FhAX66EQ?si=r7Iyx92esAp1TAEc'],
@@ -38,7 +39,7 @@ const longProjects = [
 ];
 
 function projectCard(project, index, format) {
-  const [id, url] = project;
+  const [id, url, customTitle] = project;
   const number = String(index + 1).padStart(2, '0');
   return `
     <article class="gallery-item reveal inline-video" data-video-url="${url}" tabindex="0" role="button" aria-label="Play ${format === 'SHORT' ? 'reel' : 'long format'} project ${number}">
@@ -46,7 +47,7 @@ function projectCard(project, index, format) {
         <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${format} project ${number} thumbnail" loading="lazy">
         <span class="play">▶</span><b>${format}</b>
       </div>
-      <div class="meta"><h3>${format === 'SHORT' ? 'Reel' : 'Long Format'} ${number}</h3><span>›</span></div>
+      <div class="meta"><h3>${customTitle || `${format === 'SHORT' ? 'Reel' : 'Long Format'} ${number}`}</h3><span>›</span></div>
     </article>`;
 }
 

@@ -19,9 +19,9 @@ Open `index.html` in a browser, or use any local static server.
 - `index.html` — Main portfolio
 - `gallery.html` — Reels and long-format project gallery
 
-## Important content note
+## Client name
 
-This version treats **TechBurne** as the portfolio/brand name and **Techvana** as a client. If both names refer to the same company, update the relevant text in `index.html` before publishing.
+The correct client name used in this version is **TechBurner**.
 
 ## Replace assets
 
