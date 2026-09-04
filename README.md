@@ -25,10 +25,10 @@ This version treats **TechBurne** as the portfolio/brand name and **Techvana** a
 
 ## Replace assets
 
-- Hero portrait: `assets/irfan-pixel-portrait.png`
+- Hero photo: `assets/md-irfan-raza-photo.jpeg`
 - Game sprite sheet: `assets/game-sprites.png`
 - Styles: `assets/style.css`
 - Portfolio interaction: `assets/app.js`
 - Gallery video data: `assets/gallery.js`
 
-YouTube thumbnails load from YouTube's public thumbnail service. All project cards open the supplied original video links in a new tab.
+YouTube thumbnails load from YouTube's public thumbnail service. Videos play inside the portfolio, and starting a new video automatically stops the previously active player.

@@ -41,13 +41,13 @@ function projectCard(project, index, format) {
   const [id, url] = project;
   const number = String(index + 1).padStart(2, '0');
   return `
-    <a class="gallery-item reveal" href="${url}" target="_blank" rel="noreferrer">
+    <article class="gallery-item reveal inline-video" data-video-url="${url}" tabindex="0" role="button" aria-label="Play ${format === 'SHORT' ? 'reel' : 'long format'} project ${number}">
       <div class="thumb">
         <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${format} project ${number} thumbnail" loading="lazy">
         <span class="play">▶</span><b>${format}</b>
       </div>
       <div class="meta"><h3>${format === 'SHORT' ? 'Reel' : 'Long Format'} ${number}</h3><span>›</span></div>
-    </a>`;
+    </article>`;
 }
 
 const reelGrid = document.querySelector('#reels-grid');

@@ -119,6 +119,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .portrait-card { position: relative; filter: drop-shadow(0 18px 32px rgba(0,0,0,.5)); }
 .portrait-image-wrap { border: 5px solid #1675e9; background: #062340; padding: 6px; box-shadow: inset 0 0 0 3px #6bb4ff, 8px 8px 0 #01101f; }
 .portrait-image-wrap img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; image-rendering: pixelated; }
+.portrait-image-wrap img.real-photo { image-rendering: auto; object-position: 50% 28%; }
 .portrait-stats { display: flex; align-items: center; gap: 12px; padding: 11px 10px 6px; border-inline: 5px solid #1675e9; background: #07111e; font: .54rem/1 var(--pixel); }
 .portrait-stats strong { font-size: .48rem; flex: 1; }.heart { color: var(--red); font-size: 1.25rem; }
 .xp-bar { border: 5px solid #1675e9; border-top: 0; padding: 5px 8px 9px; background: #07111e; }
@@ -165,6 +166,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .best-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
 .video-card { min-width: 0; overflow: hidden; background: rgba(6, 19, 31, .9); border: 1px solid #3a5064; border-radius: 9px; box-shadow: 0 10px 25px rgba(0,0,0,.25); transition: transform .2s, border-color .2s; }
 .video-card:hover { transform: translateY(-5px); border-color: var(--red); }
+.inline-video { cursor: pointer; }
+.inline-video:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
+.inline-video.playing { border-color: var(--yellow); transform: none; }
 .thumb { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #0d1b2b; }
 .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }.video-card:hover .thumb img { transform: scale(1.05); }
 .thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 52%, rgba(0,0,0,.55)); }
@@ -183,6 +187,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .featured-copy { padding: 26px 30px 23px; }.featured-copy h2 { color: var(--yellow); margin: 5px 0 16px; font: clamp(1.1rem, 2vw, 1.75rem)/1.3 var(--pixel); }.featured-copy h3 { margin: 0 0 10px; font-size: 1.12rem; line-height: 1.35; }.featured-copy > p:not(.eyebrow) { color: #c6d0dc; margin: 0 0 18px; }
 .featured-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }.featured-stats div { padding: 12px 8px; text-align: center; border: 1px solid #607184; border-radius: 7px; background: #07121e; }.featured-stats strong, .featured-stats span { display: block; }.featured-stats strong { font-size: .92rem; }.featured-stats span { color: var(--muted); font-size: .72rem; }
 .complete-label { display: flex; justify-content: space-between; margin: 15px 0 6px; color: var(--green); font: .45rem/1 var(--pixel); }.complete-bar { height: 13px; padding: 2px; background: #183147; }.complete-bar span { display: block; height: 100%; background: repeating-linear-gradient(90deg, #57c626 0 18px, #307c1a 18px 21px); }.text-link { display: inline-block; margin-top: 14px; color: var(--yellow); font: .48rem/1 var(--pixel); }
+.text-button { padding: 0; border: 0; background: none; cursor: pointer; text-align: left; }
+.text-button:hover { color: white; }
+
+.player-active { position: relative; background: #000; }
+.player-active::after { display: none; }
+.player-active iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+.player-close { position: absolute; z-index: 6; top: 8px; left: 8px; display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 1px solid rgba(255,255,255,.8); border-radius: 4px; color: white; background: rgba(2,9,20,.86); font: 1.4rem/1 var(--sans); cursor: pointer; }
+.player-close:hover, .player-close:focus-visible { color: #111; background: var(--yellow); outline: none; }
 
 .about { display: grid; grid-template-columns: 1fr 1.25fr; gap: 50px; align-items: stretch; }
 .about-copy p { color: #c9d2dd; margin: 0 0 12px; }.level-tag { display: inline-flex; flex-wrap: wrap; gap: 18px; margin-top: 8px; padding: 9px 11px; border: 1px solid var(--red); border-radius: 4px; font: .5rem/1 var(--pixel); }.level-tag span { color: var(--red); }
