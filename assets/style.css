@@ -138,9 +138,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-points li .hero-pr { overflow: hidden; border: 0; border-radius: 4px; background: #100770; }
 .hero-pr img { width: 100%; height: 100%; object-fit: cover; }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
-.pixel-button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 10px; padding: 12px 22px; border: 0; border-radius: 4px; font-weight: 800; box-shadow: 5px 5px 0 rgba(0,0,0,.35); transition: transform .18s, filter .18s; }
-.pixel-button:hover { transform: translate(-1px, -2px); filter: brightness(1.08); }.pixel-button:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 rgba(0,0,0,.35); }
-.pixel-button.yellow { color: #171100; background: var(--yellow); }.pixel-button.blue { background: linear-gradient(#5593ff, #2a58ad); border: 1px solid #78adff; }
+.pixel-button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px; padding: 13px 24px 15px; border: 0; border-radius: 0; font-weight: 800; letter-spacing: -.01em; clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px); box-shadow: inset 0 3px 0 rgba(255,255,255,.42), inset 0 -5px 0 rgba(0,0,0,.3), inset 3px 0 0 rgba(255,255,255,.13), inset -3px 0 0 rgba(0,0,0,.2); filter: drop-shadow(5px 6px 0 rgba(0,0,0,.4)); transition: transform .16s, filter .16s; }
+.pixel-button:hover { transform: translate(-1px, -2px); filter: brightness(1.08) drop-shadow(6px 8px 0 rgba(0,0,0,.38)); }
+.pixel-button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.pixel-button:active { transform: translate(3px, 4px); filter: brightness(.98) drop-shadow(2px 2px 0 rgba(0,0,0,.42)); }
+.pixel-button.yellow { color: #171100; background: linear-gradient(#ffe14d 0 12%, #ffc914 12% 86%, #d79400 86%); }
+.pixel-button.blue { color: #fff; background: linear-gradient(#72aaff 0 12%, #3676dc 12% 86%, #174796 86%); }
+.pixel-button.whatsapp { color: #fff; background: linear-gradient(#55e890 0 12%, #19b866 12% 86%, #087b43 86%); }
 
 .hero-level { border: 3px solid #216bbf; background: linear-gradient(180deg, #0c2f5e, #071d38); padding: 24px 20px; box-shadow: inset 0 0 0 3px #0a1525, 7px 7px 0 #001020; }
 .hero-level > p { margin: 0 0 18px; color: #f1f5ff; font: .65rem/1.5 var(--pixel); }
@@ -216,13 +220,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .mario-cloud { position: absolute; z-index: 1; width: 118px; height: 74px; left: 4%; top: 84px; opacity: .72; animation: float 7s ease-in-out infinite; }
 .mario-coin { position: absolute; z-index: 2; width: 56px; height: 56px; left: 35%; top: 104px; animation: coin 2.8s ease-in-out infinite; }
 .mario-star { position: absolute; z-index: 2; width: 62px; height: 62px; left: 55%; top: 88px; animation: twinkle 1.8s steps(2) infinite; }
-.mario-question { position: absolute; z-index: 2; width: 76px; height: 76px; right: 6%; top: 82px; }
+.mario-question { position: absolute; z-index: 2; width: 76px; height: 76px; right: 6%; top: 82px; background-size: 330% 200%; }
 .mario-route { position: absolute; z-index: 4; left: 4%; right: 4%; bottom: 88px; display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: center; gap: 8px; }
 .mario-route span { min-height: 52px; display: grid; place-items: center; padding: 8px 6px; border: 2px solid rgba(255,255,255,.72); color: white; background: #d8312c; box-shadow: 4px 4px 0 rgba(0,0,0,.36); font: .42rem/1.3 var(--pixel); }
 .mario-route span:nth-of-type(2) { background: #2074d4; }.mario-route span:nth-of-type(3) { color: #1e1900; background: #f4bd16; }.mario-route span:nth-of-type(4) { background: #47a72c; }
 .mario-route span b { margin-right: 5px; color: inherit; }.mario-route i { color: white; font: 1rem/1 var(--pixel); }
 .mario-goal { position: absolute; z-index: 3; right: 19%; bottom: 62px; padding: 6px 8px; color: #151900; background: var(--yellow); font: .38rem/1 var(--pixel); }
-.mario-pipe { position: absolute; z-index: 3; width: 106px; height: 106px; right: -10px; bottom: -15px; }
+.mario-pipe { position: absolute; z-index: 3; width: 106px; height: 106px; right: 8px; bottom: -10px; background-size: 330% 200%; }
 .mario-ground { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: 67px; border-top: 7px solid #59cb2c; background: repeating-linear-gradient(135deg, #a84a1e 0 18px, #773116 18px 36px); box-shadow: inset 0 8px 0 #2d7e20; }
 
 .clients-grid, .services-grid { display: grid; gap: 16px; }.clients-grid { grid-template-columns: repeat(4, 1fr); }.services-grid { grid-template-columns: repeat(5, 1fr); }
@@ -316,7 +320,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .mario-cloud { top: 118px; left: -12px; }
   .mario-coin { top: 142px; left: 42%; }
   .mario-star { top: 120px; left: 60%; }
-  .mario-question { top: 126px; right: -6px; }
+  .mario-question { top: 126px; right: 4px; }
   .mario-route { bottom: 84px; }
   .mario-goal { right: 31%; font-size: .33rem; }
   .proof-card { grid-template-columns: 88px 1fr; }.proof-art { font-size: 1.6rem; }
